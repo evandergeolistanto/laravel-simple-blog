@@ -1,32 +1,32 @@
+
+
 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
     <div class="position-sticky pt-3">
-      <ul class="nav flex-column">
-        <li class="nav-item">
+      <ul class="menu bg-base-100 w-56 p-2 rounded-box">
+        <li>
           <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" aria-current="page" href="/dashboard">
-            <span data-feather="home" class="align-text-bottom"></span>
-            Dashboard
+            <span data-feather="home"></span>
+          Dashboard
           </a>
         </li>
-        <li class="nav-item">
+        <li>
           <a class="nav-link {{ Request::is('dashboard/posts*') ? 'active' : '' }}" href="/dashboard/posts">
-            <span data-feather="file-text" class="align-text-bottom"></span>
+            <span data-feather="file-text"></span>
             My Posts
           </a>
         </li>
-      </ul>
-
-      @can('admin')
-      <h6 class="sidebar-heading d-flex justify content-between align-items-center px-3 mt-4 text-muted">
-        <span>Administrator</span>
-      </h6>
-      <ul class="nav flex-column">
-        <li class="nav-item">
+        @can('admin')
+        <hr>
+        <li>
+          <span class="font-semibold">Administrator</span>
+        </li>
+        <li>
           <a class="nav-link {{ Request::is('dashboard/categories*') ? 'active' : '' }}" href="/dashboard/categories">
-            <span data-feather="grid" class="align-text-bottom"></span>
-            Post Categories
+            <span data-feather="grid"></span>
+            Categories
           </a>
         </li>
+        @endcan
       </ul>
-      @endcan
     </div>
-  </nav>
+</nav>
